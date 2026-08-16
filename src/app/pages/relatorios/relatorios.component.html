@@ -1,1 +1,48 @@
-<div class="page-stack"><div class="page-title"><h2>Relatórios</h2><p>Gere relatórios gerenciais do estacionamento</p></div><section class="card"><form class="card-body grid" (ngSubmit)="generate()"><div class="grid grid-2"><div class="field"><label>Data inicial</label><input class="input" type="date" name="start" [(ngModel)]="start"></div><div class="field"><label>Data final</label><input class="input" type="date" name="end" [(ngModel)]="end"></div></div><div class="field"><label>Tipo de relatório</label><select class="input" name="type" [(ngModel)]="type"><option>Movimentações</option><option>Veículos cadastrados</option><option>Pessoas cadastradas</option><option>Ocupação</option></select></div><button class="btn btn-primary">▤ Gerar Relatório</button></form></section>@if(message){<section class="card card-body"><span class="badge badge-success">✓ {{message}}</span></section>}<div class="grid grid-4"><article class="card stat"><small>Total de entradas</small><strong>1.284</strong><span class="muted">No mês atual</span></article><article class="card stat"><small>Total de saídas</small><strong>1.239</strong><span class="muted">No mês atual</span></article><article class="card stat"><small>Média diária</small><strong>80</strong><span class="muted">Movimentações</span></article><article class="card stat"><small>Pico de ocupação</small><strong>87%</strong><span class="muted">Às 10:30</span></article></div></div>
+<div class="page-stack">
+  <div class="page-title">
+    <h2>Relatórios</h2>
+    <p>Gere relatórios gerenciais do estacionamento</p>
+  </div>
+  <section class="card">
+    <form class="card-body grid" (ngSubmit)="generate()">
+      <div class="grid grid-2">
+        <div class="field">
+          <label>Data inicial</label
+          ><input class="input" type="date" name="start" [(ngModel)]="start" />
+        </div>
+        <div class="field">
+          <label>Data final</label><input class="input" type="date" name="end" [(ngModel)]="end" />
+        </div>
+      </div>
+      <div class="field">
+        <label>Tipo de relatório</label
+        ><select class="input" name="type" [(ngModel)]="type">
+          <option>Movimentações</option>
+          <option>Veículos cadastrados</option>
+          <option>Pessoas cadastradas</option>
+          <option>Ocupação</option>
+        </select>
+      </div>
+      <button class="btn btn-primary">▤ Gerar Relatório</button>
+    </form>
+  </section>
+  @if (message) {
+    <section class="card card-body">
+      <span class="badge badge-success">✓ {{ message }}</span>
+    </section>
+  }
+  <div class="grid grid-4">
+    <article class="card stat">
+      <small>Total de entradas</small><strong>1.284</strong><span class="muted">No mês atual</span>
+    </article>
+    <article class="card stat">
+      <small>Total de saídas</small><strong>1.239</strong><span class="muted">No mês atual</span>
+    </article>
+    <article class="card stat">
+      <small>Média diária</small><strong>80</strong><span class="muted">Movimentações</span>
+    </article>
+    <article class="card stat">
+      <small>Pico de ocupação</small><strong>87%</strong><span class="muted">Às 10:30</span>
+    </article>
+  </div>
+</div>

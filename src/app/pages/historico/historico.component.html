@@ -1,1 +1,53 @@
-<div class="page-stack"><div class="page-title"><h2>Histórico de Acessos</h2><p>Consulte todas as entradas e saídas registradas</p></div><section class="card"><div class="card-body grid grid-2"><div class="field"><label>Buscar</label><input class="input" [(ngModel)]="search" placeholder="Placa ou proprietário"></div><div class="field"><label>Status</label><select class="input" [(ngModel)]="status"><option>Todos</option><option>Estacionado</option><option>Finalizado</option></select></div></div><div class="table-wrap"><table><thead><tr><th>Placa</th><th>Proprietário</th><th>Entrada</th><th>Saída</th><th>Status</th></tr></thead><tbody>@for(r of filtered;track $index){<tr><td><strong>{{r[0]}}</strong></td><td>{{r[1]}}</td><td>{{r[2]}}</td><td>{{r[3]}}</td><td><span class="badge" [class.badge-success]="r[4]==='Estacionado'">{{r[4]}}</span></td></tr>}</tbody></table></div>@if(!filtered.length){<div class="empty">Nenhum registro encontrado</div>}</section></div>
+<div class="page-stack">
+  <div class="page-title">
+    <h2>Histórico de Acessos</h2>
+    <p>Consulte todas as entradas e saídas registradas</p>
+  </div>
+  <section class="card">
+    <div class="card-body grid grid-2">
+      <div class="field">
+        <label>Buscar</label
+        ><input class="input" [(ngModel)]="search" placeholder="Placa ou proprietário" />
+      </div>
+      <div class="field">
+        <label>Status</label
+        ><select class="input" [(ngModel)]="status">
+          <option>Todos</option>
+          <option>Estacionado</option>
+          <option>Finalizado</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Placa</th>
+            <th>Proprietário</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (r of filtered; track $index) {
+            <tr>
+              <td>
+                <strong>{{ r[0] }}</strong>
+              </td>
+              <td>{{ r[1] }}</td>
+              <td>{{ r[2] }}</td>
+              <td>{{ r[3] }}</td>
+              <td>
+                <span class="badge" [class.badge-success]="r[4] === 'Estacionado'">{{ r[4] }}</span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    @if (!filtered.length) {
+      <div class="empty">Nenhum registro encontrado</div>
+    }
+  </section>
+</div>

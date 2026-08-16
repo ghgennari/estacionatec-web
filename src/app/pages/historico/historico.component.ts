@@ -1,3 +1,23 @@
 import { Component } from '@angular/core';
-@Component({selector:'app-historico',standalone:false,templateUrl:'./historico.component.html'})
-export class HistoricoComponent { search=''; status='Todos'; records=[['ABC-1234','Maria Silva','16/08/2026 08:30','16/08/2026 12:45','Finalizado'],['XYZ-5678','Carlos Santos','16/08/2026 07:15','—','Estacionado'],['DEF-9012','Ana Paula','15/08/2026 09:45','15/08/2026 18:10','Finalizado'],['GHI-3456','Roberto Lima','15/08/2026 10:20','15/08/2026 14:30','Finalizado']]; get filtered(){return this.records.filter(r=>(this.status==='Todos'||r[4]===this.status)&&r.join(' ').toLowerCase().includes(this.search.toLowerCase()));} }
+@Component({
+  selector: 'app-historico',
+  standalone: false,
+  templateUrl: './historico.component.html',
+})
+export class HistoricoComponent {
+  search = '';
+  status = 'Todos';
+  records = [
+    ['ABC-1234', 'Maria Silva', '16/08/2026 08:30', '16/08/2026 12:45', 'Finalizado'],
+    ['XYZ-5678', 'Carlos Santos', '16/08/2026 07:15', '—', 'Estacionado'],
+    ['DEF-9012', 'Ana Paula', '15/08/2026 09:45', '15/08/2026 18:10', 'Finalizado'],
+    ['GHI-3456', 'Roberto Lima', '15/08/2026 10:20', '15/08/2026 14:30', 'Finalizado'],
+  ];
+  get filtered() {
+    return this.records.filter(
+      (r) =>
+        (this.status === 'Todos' || r[4] === this.status) &&
+        r.join(' ').toLowerCase().includes(this.search.toLowerCase()),
+    );
+  }
+}
