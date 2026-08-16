@@ -28,14 +28,14 @@ const routes: Routes = [
       { path: 'historico', component: HistoricoComponent, data: { title: 'Histórico' } },
       { path: 'relatorios', component: RelatoriosComponent, data: { title: 'Relatórios' } },
       { path: 'usuarios', component: UsuariosComponent, data: { title: 'Usuários' } },
-      { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
-    ]
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+    ],
   },
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'dashboard' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

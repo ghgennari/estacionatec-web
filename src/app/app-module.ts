@@ -33,16 +33,10 @@ import { VeiculosComponent } from './pages/veiculos/veiculos.component';
     RelatoriosComponent,
     SaidaComponent,
     UsuariosComponent,
-    VeiculosComponent
+    VeiculosComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-  ],
-  bootstrap: [App]
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
