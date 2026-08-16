@@ -1,3 +1,46 @@
 import { Component } from '@angular/core';
-@Component({selector:'app-usuarios',standalone:false,templateUrl:'./usuarios.component.html'})
-export class UsuariosComponent { search=''; modal=false; form={name:'',username:'',email:'',role:'Porteiro',status:'Ativo',password:''}; users=[{name:'João Carlos',username:'joao.carlos',email:'joao@edu.br',role:'Administrador',status:'Ativo'},{name:'Marcos Oliveira',username:'marcos.oliveira',email:'marcos@edu.br',role:'Porteiro',status:'Ativo'},{name:'Juliana Souza',username:'juliana.souza',email:'juliana@edu.br',role:'Porteiro',status:'Inativo'}]; get filtered(){return this.users.filter(u=>Object.values(u).join(' ').toLowerCase().includes(this.search.toLowerCase()));} save(){if(this.form.name&&this.form.username&&this.form.email&&this.form.password.length>=6){const {password,...user}=this.form;this.users=[...this.users,{...user}];this.modal=false;}} }
+@Component({
+  selector: 'app-usuarios',
+  standalone: false,
+  templateUrl: './usuarios.component.html',
+})
+export class UsuariosComponent {
+  search = '';
+  modal = false;
+  form = { name: '', username: '', email: '', role: 'Porteiro', status: 'Ativo', password: '' };
+  users = [
+    {
+      name: 'João Carlos',
+      username: 'joao.carlos',
+      email: 'joao@edu.br',
+      role: 'Administrador',
+      status: 'Ativo',
+    },
+    {
+      name: 'Marcos Oliveira',
+      username: 'marcos.oliveira',
+      email: 'marcos@edu.br',
+      role: 'Porteiro',
+      status: 'Ativo',
+    },
+    {
+      name: 'Juliana Souza',
+      username: 'juliana.souza',
+      email: 'juliana@edu.br',
+      role: 'Porteiro',
+      status: 'Inativo',
+    },
+  ];
+  get filtered() {
+    return this.users.filter((u) =>
+      Object.values(u).join(' ').toLowerCase().includes(this.search.toLowerCase()),
+    );
+  }
+  save() {
+    if (this.form.name && this.form.username && this.form.email && this.form.password.length >= 6) {
+      const { password, ...user } = this.form;
+      this.users = [...this.users, { ...user }];
+      this.modal = false;
+    }
+  }
+}
