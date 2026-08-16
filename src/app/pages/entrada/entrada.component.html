@@ -1,1 +1,58 @@
-<div class="page-stack"><div class="page-title"><h2>Registrar Entrada de Veículo</h2><p>Preencha os dados para liberar o acesso ao estacionamento</p></div><section class="card"><form class="card-body grid" (ngSubmit)="submit()"><div class="grid grid-2"><div class="field"><label>Placa do veículo *</label><input class="input" name="plate" [(ngModel)]="plate" placeholder="ABC-1234" maxlength="8"></div><div class="field"><label>Tipo de pessoa *</label><select class="input" name="type" [(ngModel)]="type"><option>Aluno</option><option>Professor</option><option>Funcionário</option><option>Visitante</option></select></div></div><div class="field"><label>Nome do proprietário *</label><input class="input" name="person" [(ngModel)]="person" placeholder="Digite o nome ou documento"></div><div class="field"><label>Observações</label><textarea class="input" name="observation" [(ngModel)]="observation" rows="4" placeholder="Informações adicionais"></textarea></div>@if(saved){<span class="badge badge-success">✓ Entrada registrada com sucesso</span>}<button class="btn btn-primary" type="submit">↪ Registrar Entrada</button></form></section><aside class="card card-body"><strong>Data e hora do registro</strong><p class="muted">O horário atual será associado automaticamente à entrada.</p></aside></div>
+<div class="page-stack">
+  <div class="page-title">
+    <h2>Registrar Entrada de Veículo</h2>
+    <p>Preencha os dados para liberar o acesso ao estacionamento</p>
+  </div>
+  <section class="card">
+    <form class="card-body grid" (ngSubmit)="submit()">
+      <div class="grid grid-2">
+        <div class="field">
+          <label>Placa do veículo *</label
+          ><input
+            class="input"
+            name="plate"
+            [(ngModel)]="plate"
+            placeholder="ABC-1234"
+            maxlength="8"
+          />
+        </div>
+        <div class="field">
+          <label>Tipo de pessoa *</label
+          ><select class="input" name="type" [(ngModel)]="type">
+            <option>Aluno</option>
+            <option>Professor</option>
+            <option>Funcionário</option>
+            <option>Visitante</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Nome do proprietário *</label
+        ><input
+          class="input"
+          name="person"
+          [(ngModel)]="person"
+          placeholder="Digite o nome ou documento"
+        />
+      </div>
+      <div class="field">
+        <label>Observações</label
+        ><textarea
+          class="input"
+          name="observation"
+          [(ngModel)]="observation"
+          rows="4"
+          placeholder="Informações adicionais"
+        ></textarea>
+      </div>
+      @if (saved) {
+        <span class="badge badge-success">✓ Entrada registrada com sucesso</span>
+      }
+      <button class="btn btn-primary" type="submit">↪ Registrar Entrada</button>
+    </form>
+  </section>
+  <aside class="card card-body">
+    <strong>Data e hora do registro</strong>
+    <p class="muted">O horário atual será associado automaticamente à entrada.</p>
+  </aside>
+</div>
