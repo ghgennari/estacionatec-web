@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
+
+@Component({
+  selector: 'app-header',
+  standalone: false,
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css'
+})
+export class HeaderComponent {
+  title = 'Dashboard';
+  readonly date = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date());
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+      let current = this.route;
+      while (current.firstChild) current = current.firstChild;
+      this.title = current.snapshot.data['title'] ?? 'Dashboard';
+    });
+  }
+}
